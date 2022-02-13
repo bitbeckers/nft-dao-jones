@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import {
   ChakraProvider,
   Box,
@@ -8,9 +8,12 @@ import {
   Code,
   Grid,
   theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
+import QRCode from "react-qr-code";
+import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import { Logo } from "./Logo";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -18,21 +21,29 @@ export const App = () => (
       <Grid minH="100vh" p={3}>
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
+          <Wrap>
+            <WrapItem>
+              <Logo h="40vmin" pointerEvents="none" />
+            </WrapItem>
+            <WrapItem>
+              <Logo h="40vmin" pointerEvents="none" />
+            </WrapItem>
+            <WrapItem>
+              <Logo h="40vmin" pointerEvents="none" />
+            </WrapItem>
+          </Wrap>
           <Link
             color="teal.500"
-            href="https://chakra-ui.com"
+            href="https://raidguild.org"
             fontSize="2xl"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn Chakra
+            <QRCode value="https://raidguild.org" />
+            Learn more
           </Link>
         </VStack>
       </Grid>
     </Box>
   </ChakraProvider>
-)
+);
