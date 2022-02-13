@@ -8,10 +8,13 @@ import {
   theme,
   Wrap,
   WrapItem,
+  Image,
 } from "@chakra-ui/react";
 import QRCode from "react-qr-code";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import { Logo } from "./Logo";
+import logo from "./logo.png";
+
+const images = [logo, logo, logo];
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -20,15 +23,13 @@ export const App = () => (
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
           <Wrap>
-            <WrapItem>
-              <Logo h="40vmin" pointerEvents="none" />
-            </WrapItem>
-            <WrapItem>
-              <Logo h="40vmin" pointerEvents="none" />
-            </WrapItem>
-            <WrapItem>
-              <Logo h="40vmin" pointerEvents="none" />
-            </WrapItem>
+            {images.map((image) => {
+              return (
+                <WrapItem>
+                  <Image src={image} boxSize="sm" objectFit="cover" />
+                </WrapItem>
+              );
+            })}
           </Wrap>
           <Link
             color="teal.500"
