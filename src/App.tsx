@@ -12,9 +12,11 @@ import {
 } from "@chakra-ui/react";
 import QRCode from "react-qr-code";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import logo from "./logo.png";
+import logo1 from "./logo.png";
+import logo2 from "./logo.png";
+import logo3 from "./logo.png";
 
-const images = [logo, logo, logo];
+const images = [logo1, logo2, logo3, logo1];
 
 export const App = () => (
   <ChakraProvider theme={theme}>
